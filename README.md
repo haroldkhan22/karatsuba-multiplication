@@ -30,3 +30,10 @@ Schoolbook multiplication of two n-digit numbers is O(n²). Karatsuba splits eac
 `subtract(a, b)` assumes `a >= b` (as values). It does not check. The Karatsuba recombination guarantees this by taking `|lowA - lowB|` before calling `subtract`, but if you call it directly with `a < b` you get a meaningless result with no error.
 
 The implementation handles only non-negative integers. There is no sign bit and no decimal-point handling.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
