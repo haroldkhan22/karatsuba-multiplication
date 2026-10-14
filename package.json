@@ -1,6 +1,6 @@
 {
   "name": "karatsuba-multiplication",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Multiplies two arbitrarily large integers represented as digit arrays using the divide-and-conquer algorithm.",
   "type": "module",
   "main": "src/index.js",
